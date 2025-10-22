@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Library - Online Academic Library</title>
+
+    <!-- Fontawesome | AOS -->
+    <script src="https://kit.fontawesome.com/c25cabee86.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="rl.css">
+</head>
+<body>
+    <a href="#library" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+    <!-- Library Section -->
+    <section class="library-section py-5" id="library">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h1>Resource Library</h1>
+                    <p class="lead">Search and explore our collection of academic resources.</p>
+                </div>
+            </div>
+            <!-- Search Box -->
+            <div class="row justify-content-center mb-5 sticky-row">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <div>
+                        <input type="text" class="form-control form-control-lg rounded-pill" id="searchInput" placeholder="Search by title or tags (e.g., Math, Science)...">
+                    </div>
+                </div>
+            </div>
+            <div class="filter mb-4 row">
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="subject" data-value="math">
+                        <i class="fas fa-calculator fa-2x mb-1"></i>
+                        <span>Math</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="subject" data-value="science">
+                        <i class="fas fa-flask fa-2x mb-1"></i>
+                        <span>Science</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="subject" data-value="english">
+                        <i class="fas fa-book-open fa-2x mb-1"></i>
+                        <span>English</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="subject" data-value="history">
+                        <i class="fas fa-landmark fa-2x mb-1"></i>
+                        <span>History</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="type" data-value="textbook">
+                        <i class="fas fa-book fa-2x mb-1"></i>
+                        <span>Textbook</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="type" data-value="workbook">
+                        <i class="fas fa-edit fa-2x mb-1"></i>
+                        <span>Workbook</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="type" data-value="notes">
+                        <i class="fas fa-sticky-note fa-2x mb-1"></i>
+                        <span>Notes</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="type" data-value="article">
+                        <i class="fas fa-newspaper fa-2x mb-1"></i>
+                        <span>Past Papers</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="grade" data-value="year10">
+                        <i class="fas fa-graduation-cap fa-2x mb-1"></i>
+                        <span>O Level</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="grade" data-value="year11">
+                        <i class="fas fa-graduation-cap fa-2x mb-1"></i>
+                        <span>A Level</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="grade" data-value="year12">
+                        <i class="fas fa-graduation-cap fa-2x mb-1"></i>
+                        <span>AS Level</span>
+                    </button>
+                    <button class="btn btn-outline-primary d-flex flex-column align-items-center p-2 m-0 filter-btn" data-filter="grade" data-value="all">
+                        <i class="fas fa-infinity fa-2x mb-1"></i>
+                        <span>All</span>
+                    </button>
+                </div>
+            </div>
+            <div class="container">
+                <!-- View All -->
+                <div class="view row align-items-center">
+                    <div class="col-12">
+                        <h3>All</h3>
+                    </div>
+                </div>
+                <!-- Resource Grid -->
+                <div class="row" id="resourceGrid">
+                    <!-- Sample Resources -->
+                    <div class="col-lg-3 col-md-6 mb-4 resource-item" data-title="Mathematics Learner 9" data-tags="math, textbook, year9">
+                        <a href="rp.html" class="resource-card h-100">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEKED3PtNby9Ka1I-NsEV4EsTgWB4h1Dd0zA&s" class="resource-card-img-top" alt="Mathematics Textbook">
+                            <div class="resource-card-body text-start">
+                                <h5 class="resource-card-title">Mathematics Learner 9</h5>
+                                <div class="tags">
+                                    <span class="badge me-1">Math</span>
+                                    <span class="badge me-1">Textbook</span>
+                                    <span class="badge">Year 9</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 resource-item" data-title="Mathematics Workbook 9" data-tags="math, workbook, year9">
+                        <a href="rp.html" class="resource-card h-100">
+                            <img src="https://image.isu.pub/210129060804-f0634949f44223fbe0ef86f79d635eb1/jpg/page_1_thumb_large.jpg" class="resource-card-img-top" alt="Mathematics Workbook">
+                            <div class="resource-card-body text-start">
+                                <h5 class="resource-card-title">Mathematics Workbook 9</h5>
+                                <div class="tags">
+                                    <span class="badge me-1">Math</span>
+                                    <span class="badge me-1">Workbook</span>
+                                    <span class="badge">Year 9</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 resource-item" data-title="History Notes" data-tags="history, notes, year9">
+                        <a href="rp.html" class="resource-card h-100">
+                            <img src="https://image.isu.pub/200402120358-ad3cabef80449f81072f871402ef8238/jpg/page_1_thumb_large.jpg" class="resource-card-img-top" alt="History Notes">
+                            <div class="resource-card-body text-start">
+                                <h5 class="resource-card-title">History Notes 9</h5>
+                                <div class="tags">
+                                    <span class="badge me-1">History</span>
+                                    <span class="badge me-1">Notes</span>
+                                    <span class="badge">Year 9</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 resource-item" data-title="Science Workbook 9" data-tags="science, workbook, year9">
+                        <a href="rp.html" class="resource-card h-100">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWvaRglkSDkObmySVr9uV2uHnRC7ny54sfpw&s" class="resource-card-img-top" alt="Science Workbook">
+                            <div class="resource-card-body text-start">
+                                <h5 class="resource-card-title">Science Workbook 9</h5>
+                                <div class="tags">
+                                    <span class="badge me-1">Science</span>
+                                    <span class="badge me-1">Workbook</span>
+                                    <span class="badge">Year 9</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 resource-item" data-title="English Textbook" data-tags="english, textbook, year9">
+                        <a href="rp.html" class="resource-card h-100">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT37QT3JPP3ThPcnOGkejBD-FSJuGqgaom02Q&s" class="resource-card-img-top" alt="English Textbook">
+                            <div class="resource-card-body text-start">
+                                <h5 class="resource-card-title">English Learner 9</h5>
+                                <div class="tags">
+                                    <span class="badge me-1">English</span>
+                                    <span class="badge me-1">Textbook</span>
+                                    <span class="badge">Year 9</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 resource-item" data-title="English Workbook" data-tags="english, workbook, year9">
+                        <a href="rp.html" class="resource-card h-100">
+                            <img src="https://assets.cambridge.org/97811087/46694/large_cover/9781108746694i.jpg" class="resource-card-img-top" alt="English Workbook">
+                            <div class="resource-card-body text-start">
+                                <h5 class="resource-card-title">English Workbook 9</h5>
+                                <div class="tags">
+                                    <span class="badge me-1">English</span>
+                                    <span class="badge me-1">Workbook</span>
+                                    <span class="badge">Year 9</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="top">
+                <img src="img3.png" alt="">
+                <div class="desc">
+                    <h3>2025 year 50 most popular Bestsellers</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime aliquam placeat eligendi dignissimos quas quasi nostrum laboriosam nesciunt?</p>
+                    <button><i class="fa-solid fa-eye"></i>ㅤview all</button>
+                </div>
+                <div class="row">
+                    <div class="top-books">
+                        <h5>Top 50 Philisophical Books</h5>
+                        <p>orem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="top-books">
+                        <h5>Top 50 Language Books</h5>
+                        <p>orem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="top-books">
+                        <h5>Top 50 Chemistry Books</h5>
+                        <p>orem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="rl.js"></script>
+</body>
+</html>

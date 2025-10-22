@@ -1,0 +1,243 @@
+body {
+    background: linear-gradient(to right, #f8fbfd 40%, #e3ecf1 40%);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+.library-section {
+    margin-top: 3%;
+}
+h1 {
+    font-size: 3em;
+    color: #667eea;
+    font-weight: 700;
+    font-style: normal;
+}
+.lead {
+    margin-bottom: -20px;
+}
+.form-control {
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+.form-control:focus {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+}
+
+.filter-btn {
+    font-size: 1em;
+    border: none;
+    transition: all 0.3s ease;
+    color: #4a5568;
+}
+.filter-btn:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+    color: #667eea;
+}
+.filter-btn.shrink {
+    transform: scale(0.9);
+}
+
+.view {
+    margin-top: 3%;
+}
+.carousel {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.resource-card {
+    padding: 15%;
+    border: none;
+    border-radius: none;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.resource-card-img-top {
+    border-radius: 5px;
+    width: 250px;
+    object-fit: cover;
+    box-shadow: -20px 20px 20px rgba(0, 0, 0, 0.3);
+}
+.resource-card:hover {
+    transform: translateY(-20px) scale(1.1);
+}
+
+.resource-card-body {
+    padding: 40px 0 0 0;
+    text-align: center;
+}
+.badge {
+    color: #fff;
+    background-color: #667eea;
+}
+
+.top {
+    background-color: #e3ecf1;
+    padding: 3% 5% 1%;
+    margin-bottom: -4%;
+    display: flex;
+    gap: 5%;
+    border-radius: 30px 30px 0 0;
+}
+.top img {
+    width: 300px;
+}
+.top .desc {
+    margin: auto;
+}
+.desc h3, .desc p {
+    margin-bottom: 8%;
+}
+.top h3, .top h5 {
+    color: #667eea;
+}
+.top .desc button {
+    background-color: #667eea;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.top-books {
+    background-color: #f8fbfd;
+    border-radius: 20px;
+    padding: 5% 8% 3%;
+    margin-bottom: 5%;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background-color: #5a67d8;
+}
+
+.sticky-row {
+    position: sticky;
+    top: 0;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .resource-item {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+    .resource-card-img-top {
+        width: 200px;
+    }
+    .top {
+        gap: 5%;
+        margin-bottom: -15%;
+    }
+    .top h3 {
+        font-size: 1.2em;
+    }
+    .top p {
+        font-size: 0.8em;
+    }
+    .top .desc button {
+        font-size: 0.8em;
+        padding: 8px 16px;
+    }
+    .top-books h5 {
+        padding-top: 5%;
+        font-size: 0.9em;
+    }
+    .top-books p {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .lead {
+        font-size: 0.7em;
+    }
+    .form-control {
+        font-size: 0.7em;
+        padding: 12px 15px;
+    }
+    .filter-btn {
+        font-size: 0.5em;
+    }
+    .resource-card-title {
+        font-size: 0.9em;
+    }
+    .badge {
+        font-size: 0.7em;
+    }
+    .resource-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .resource-card-img-top {
+        width: 100%;
+        max-width: 200px;
+    }
+    .resource-card-body {
+        padding: 20px 0 0 0;
+    }
+    .top {
+        flex-direction: column;
+        gap: 2%;
+        margin-bottom: -15%;
+    }
+    .top img {
+        order: 2;
+       position: relative;
+    }
+    .desc {
+        padding: 5% 3%;
+    }
+    .top h3 {
+        font-size: 1.2em;
+    }
+    .top p {
+        font-size: 0.8em;
+    }
+    .top .desc button {
+        font-size: 0.8em;
+        padding: 8px 16px;
+    }
+    .top .row {
+        margin: 3%;
+    }
+    .top-books h5 {
+        padding-top: 5%;
+        font-size: 0.9em;
+    }
+    .top-books p {
+        font-size: 0.8em;
+    }
+}
